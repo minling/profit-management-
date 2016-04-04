@@ -11,10 +11,81 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223032923) do
+ActiveRecord::Schema.define(version: 20160304200249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "current_batches", force: :cascade do |t|
+    t.integer "item_id"
+    t.integer "quantity"
+    t.integer "material_id"
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string  "name"
+    t.integer "vendor_id"
+    t.string  "email"
+  end
+
+  create_table "discounts", force: :cascade do |t|
+    t.string  "name"
+    t.string  "code"
+    t.integer "percentage"
+    t.decimal "amount"
+    t.integer "vendor_id"
+  end
+
+  create_table "expenses", force: :cascade do |t|
+    t.string  "name"
+    t.decimal "amount"
+    t.integer "vendor_id"
+  end
+
+  create_table "fees", force: :cascade do |t|
+    t.string  "name"
+    t.decimal "percentage"
+    t.integer "vendor_id"
+  end
+
+  create_table "materials", force: :cascade do |t|
+    t.integer  "item_id"
+    t.integer  "quantity"
+    t.decimal  "cost_price"
+    t.datetime "purchase_date"
+    t.decimal  "piece_price"
+    t.string   "color"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "item_id"
+    t.integer "quantity"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "vendor_id"
+    t.decimal "subtotal"
+    t.integer "discount_id"
+    t.decimal "total"
+    t.decimal "shipping_cost"
+    t.decimal "profit"
+    t.date    "order_date"
+    t.integer "customer_id"
+    t.integer "fee_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string  "name"
+    t.decimal "price"
+  end
+
+  create_table "shippings", force: :cascade do |t|
+    t.integer "order_id"
+    t.integer "tracking_number"
+    t.integer "customer_id"
+    t.integer "vendor_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -33,5 +104,10 @@ ActiveRecord::Schema.define(version: 20160223032923) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "vendors", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+  end
 
 end
