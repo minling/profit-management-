@@ -8,9 +8,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    redirect_to home_index_path
+  end
 
   # GET /resource/edit
   # def edit

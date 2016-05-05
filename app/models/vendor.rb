@@ -1,4 +1,5 @@
 class Vendor < ActiveRecord::Base
+  belongs_to :user
   has_many :customers
   has_many :fees
   has_many :discounts

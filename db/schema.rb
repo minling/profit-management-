@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160304200249) do
   end
 
   create_table "materials", force: :cascade do |t|
+    t.integer  "user_id"
     t.integer  "product_id"
     t.integer  "quantity"
     t.decimal  "cost_price"
@@ -76,6 +77,7 @@ ActiveRecord::Schema.define(version: 20160304200249) do
   end
 
   create_table "products", force: :cascade do |t|
+    t.integer "user_id"
     t.string  "name"
     t.decimal "price"
   end
@@ -105,8 +107,9 @@ ActiveRecord::Schema.define(version: 20160304200249) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "vendors", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
+    t.integer "user_id"
+    t.string  "name"
+    t.string  "url"
   end
 
 end
