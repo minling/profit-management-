@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160304200249) do
   enable_extension "plpgsql"
 
   create_table "current_batches", force: :cascade do |t|
-    t.integer "item_id"
+    t.integer "product_id"
     t.integer "quantity"
     t.integer "material_id"
   end
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20160304200249) do
   end
 
   create_table "materials", force: :cascade do |t|
-    t.integer  "item_id"
+    t.integer  "product_id"
     t.integer  "quantity"
     t.decimal  "cost_price"
     t.datetime "purchase_date"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20160304200249) do
     t.string   "color"
   end
 
-  create_table "order_items", force: :cascade do |t|
+  create_table "order_products", force: :cascade do |t|
     t.integer "order_id"
     t.integer "item_id"
     t.integer "quantity"
@@ -83,7 +83,6 @@ ActiveRecord::Schema.define(version: 20160304200249) do
   create_table "shippings", force: :cascade do |t|
     t.integer "order_id"
     t.integer "tracking_number"
-    t.integer "customer_id"
     t.integer "vendor_id"
   end
 
