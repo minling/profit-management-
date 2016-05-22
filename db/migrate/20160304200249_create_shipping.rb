@@ -3,7 +3,7 @@ class CreateShipping < ActiveRecord::Migration
     create_table :shippings do |t|
       t.integer :order_id
       t.integer :tracking_number
-      t.integer :vendor_id
+      t.integer :business_id
     end
   end
 end

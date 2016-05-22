@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  belongs_to :vendor  
+  belongs_to :business  
   has_many :discounts
   belongs_to :shipping
   has_many :fees

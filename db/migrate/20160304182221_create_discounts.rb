@@ -5,7 +5,7 @@ class CreateDiscounts < ActiveRecord::Migration
       t.string :code
       t.integer :percentage
       t.decimal :amount
-      t.integer :vendor_id
+      t.integer :business_id
     end
   end
 end

@@ -3,7 +3,7 @@ class CreateFees < ActiveRecord::Migration
     create_table :fees do |t|
       t.string :name
       t.decimal :percentage
-      t.integer :vendor_id
+      t.integer :business_id
     end
   end
 end

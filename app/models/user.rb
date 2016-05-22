@@ -6,6 +6,6 @@ class User < ActiveRecord::Base
 
   has_many :materials
   has_many :products
-  has_many :vendors
+  has_many :businesses
   
 end
