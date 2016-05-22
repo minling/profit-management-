@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :home, only: [:index] 
 
-  resources :businesses, only: [:index]
+  resources :businesses
 
 
   # Example of regular route:

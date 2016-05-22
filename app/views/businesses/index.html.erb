@@ -1,0 +1,11 @@
+<h1>These are all your businesses</h1>
+
+<% @businesses.each do |business| %>
+  <%= business.name %> <br>
+  <%= business.url %><br>
+  <%= link_to 'Edit this business', edit_business_path(business) %><br><br>
+<% end %>
+
+<h5>Click here to  make a new one </h5>
+<%= link_to 'Add a new Business', new_business_path %>
+
