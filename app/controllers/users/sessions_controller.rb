@@ -3,7 +3,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   # def new
-  #   super
+  #   redirect_to home_index_path
   # end
 
   # POST /resource/sign_in
@@ -14,6 +14,7 @@ class Users::SessionsController < Devise::SessionsController
   # DELETE /resource/sign_out
   def destroy
     sign_out @user
+    redirect_to root_path
   end
 
   # protected
