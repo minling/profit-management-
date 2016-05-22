@@ -6,4 +6,5 @@ class Business < ActiveRecord::Base
   has_many :expenses
   has_many :orders
   has_many :shippings
+  has_many :products, through: :user
 end
