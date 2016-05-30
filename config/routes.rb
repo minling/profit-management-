@@ -9,15 +9,9 @@ Rails.application.routes.draw do
 
   resources :home, only: [:index] 
 
-  resources :businesses do 
-    resources :products
-  end
+  resources :businesses
 
-
-
-  resources :articles do
-  resources :comments, only: [:index, :new, :create]
-end
+  resources :products
 
 
   # Example of regular route:
