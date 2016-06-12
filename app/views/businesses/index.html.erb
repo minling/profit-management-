@@ -1,12 +1,19 @@
 
 <h1>These are all your businesses</h1>
-
-<% @businesses.each do |business| %>
-  <%= link_to business.name, business_path(business) %> <br>
-  <%= business.url %><br>
-  <%= link_to 'Edit this business', edit_business_path(business) %><br><br>
-<% end %>
-
+<div class="card-deck-wrapper">
+  <div class="card-deck">
+  <% @businesses.each do |business| %>
+    <div class="card">
+    <img class="card-img-top" src="/assets/card_image.jpg" alt="Card image cap">
+      <div class="card-block">
+        <h4 class="card-title"><%= link_to business.name, business_path(business) %> <br></h4>
+        <p class="card-text"><%= business.url %><br></p>
+        <a href="#" class="btn btn-primary"><%= link_to 'Edit this business', edit_business_path(business) %><br><br></a>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 <h5>Click here to  make a new one </h5>
 <%= link_to 'Add a new Business', new_business_path %>
 
