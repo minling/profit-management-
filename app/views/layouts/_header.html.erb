@@ -1,0 +1,37 @@
+<header>
+  <div class="wrap clearfix">
+  <a href="/" id="logo"><img src="/assets/piggy_icon.png"> PROFIT PIG</a>
+    <nav class="navigation" role="navigation">
+      <ul class="header-links">
+        <li>
+          <%= link_to('Dashboard', home_index_path) %>
+        </li>
+        <li>
+          <a href="/business" onclick="ga('send', 'event', 'Header Links', 'Clicked', 'Business');" class="link">Business</a>
+        </li>
+        <li>
+          <a href="/info/faq" onclick="ga('send', 'event', 'Header Links', 'Clicked', 'FAQ');" class="link">FAQ</a>
+        </li>
+        <li>
+          <a href="/info/contact" onclick="ga('send', 'event', 'Header Links', 'Clicked', 'Contact');" class="link">Contact</a>
+        </li>
+        <li>
+          <a href="http://blog.peekoapp.com/" onclick="ga('send', 'event', 'Header Links', 'Clicked', 'Follow our Blog');" class="link">Blog</a>
+        </li>
+        <% if user_signed_in? %>
+        <li>
+          You are signed in 
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>       
+        </li>
+        <% else %>
+        <li>
+          <%= link_to('Login', new_user_session_path)  %>  
+        </li>
+        <li>
+          <%= link_to 'Sign up here', new_user_registration_path %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

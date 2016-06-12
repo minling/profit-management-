@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# gem 'normalize-rails'
+
+gem 'rspec-rails'
+
 gem 'pry'
 
 gem 'rails-erd'

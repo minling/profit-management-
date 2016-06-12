@@ -2,14 +2,21 @@
 <html>
 <head>
   <title>ProfitManagement</title>
+  <script src="https://use.typekit.net/bdn1dyz.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<%= yield %>
+  <%= render partial: 'layouts/header' %>
+<!--   <p class="notice"><%#= notice %></p>
+  <p class="alert"><%#= alert %></p> -->
+  <% #if flash[:notice] %>
+  <!-- <div class="notice"><%= flash[:notice] %></div> -->
+  <%# end %>
+  <%= yield %>
 
 </body>
 </html>
