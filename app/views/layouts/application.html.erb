@@ -5,7 +5,9 @@
   <script src="https://use.typekit.net/bdn1dyz.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -22,7 +24,13 @@
   <% #if flash[:notice] %>
   <!-- <div class="notice"><%= flash[:notice] %></div> -->
   <%# end %>
-  <%= yield %>
 
+  <% if current_page?(root_path) %>
+    <%= yield %>
+  <% else %>
+    <div class="content">
+      <%= yield %>
+    </div>
+  <% end %>
 </body>
 </html>

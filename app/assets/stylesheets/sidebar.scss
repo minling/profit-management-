@@ -1,20 +1,38 @@
 .sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    background-color: #19283F;
-    width: 15%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: #19283F;
+  width: 15%;
+  color: #fff;
 
-    .sidebar-logo{
-      background-color: #2A3E61;
-      max-height: 100px;
-      img {
-        height: 100px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100px;
-        display: block;
-        -webkit-filter: invert(80%);
-      }
+  .sidebar-logo{
+    background-color: #2A3E61;
+    max-height: 100px;
+    img {
+      height: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100px;
+      display: block;
+      -webkit-filter: invert(80%);
     }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    
+    li {
+      padding-top: 50px;
+    }
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+    a:hover{
+      color: #597091;
+    }
+  }
 }
