@@ -16,7 +16,7 @@
 <body>
   <%= render partial: 'layouts/header' %>
 
-  <% unless current_page?(root_path) %>
+  <% unless current_page?(root_path) || !user_signed_in? %>
     <%= render partial: 'layouts/sidebar' %>
   <% end %>
 <!--   <p class="notice"><%#= notice %></p>
