@@ -1,13 +1,15 @@
+@import 'layout';
+
 .sidebar {
   position: fixed;
   top: 0;
   bottom: 0;
-  background-color: #19283F;
+  background-color: $dark-blue;
   width: 15%;
   color: #fff;
 
   .sidebar-logo{
-    background-color: #2A3E61;
+    background-color: $navy-blue;
     max-height: 100px;
     img {
       height: 100px;

@@ -1,3 +1,5 @@
+@import 'layout';
+
 .card-deck {
   display: block;
   .card {
@@ -11,6 +13,7 @@
       width: 100%;
     }
 
+
     .card-title {
       font-weight: bold;
       letter-spacing: 2px;
@@ -21,4 +24,7 @@
       padding-bottom: 15px;
     }
   }
+}
+.fa-plus-circle {
+  color: $light-green;
 }
