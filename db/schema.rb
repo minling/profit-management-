@@ -11,21 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160304200249) do
+ActiveRecord::Schema.define(version: 20160703154224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "batches", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "material_id"
+    t.string   "name"
+    t.string   "color"
+    t.string   "size"
+    t.integer  "original_quantity"
+    t.integer  "current_quantity"
+    t.decimal  "total_cost"
+    t.datetime "purchase_date"
+    t.decimal  "cost_per_piece"
+  end
 
   create_table "businesses", force: :cascade do |t|
     t.integer "user_id"
     t.string  "name"
     t.string  "url"
-  end
-
-  create_table "current_batches", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "quantity"
-    t.integer "material_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -55,18 +62,16 @@ ActiveRecord::Schema.define(version: 20160304200249) do
   end
 
   create_table "materials", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "product_id"
-    t.integer  "quantity"
-    t.decimal  "cost_price"
-    t.datetime "purchase_date"
-    t.decimal  "piece_price"
-    t.string   "color"
+    t.string  "name"
+    t.integer "total_quantity"
+    t.string  "color"
+    t.string  "size"
+    t.integer "current_batch"
   end
 
   create_table "order_products", force: :cascade do |t|
     t.integer "order_id"
-    t.integer "item_id"
+    t.integer "product_id"
     t.integer "quantity"
   end
 
@@ -111,5 +116,12 @@ ActiveRecord::Schema.define(version: 20160304200249) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "variants", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "material_id"
+    t.string  "color"
+    t.string  "size"
+  end
 
 end
