@@ -1,13 +1,11 @@
 class CreateMaterials < ActiveRecord::Migration
   def change
     create_table :materials do |t|
-      t.integer :user_id
-      t.integer :product_id
-      t.integer :quantity
-      t.decimal :cost_price
-      t.datetime :purchase_date
-      t.decimal :piece_price
+      t.string :name
+      t.integer :total_quantity
       t.string :color
+      t.string :size
+      t.integer :current_batch
     end
   end
 end
