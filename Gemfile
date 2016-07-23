@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 # gem 'normalize-rails'
+gem 'rake', '11.2.2'
+
+gem 'bootstrap-datepicker-rails'
 
 gem 'rspec-rails'
 

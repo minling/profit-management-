@@ -1,19 +1,10 @@
-
-  create_table "materials", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "product_id"  THIS
-    t.integer  "quantity"
-    t.decimal  "cost_price"
-    t.datetime "purchase_date"
-    t.decimal  "piece_price"
-    t.string   "color"
-
 <h1>Add a new material:</h1>
+<h5>(IE. gold chains, silver chains, whole products, gold charms, etc.)</h5>
 
 <%= form_for(@material) do |f| %>
-  Name: <%= f.text_field :name %><br />
-  Quantity: <%= f.text_field :total_quantity %><br />
-  Color: <%= f.text_field :color %><br />
-  Size: <%= f.text_field :size %><br />
+  Name: <%= f.text_field :name %><br>
+  Color: <%= f.text_field :color %><br>
+  Size: <%= f.text_field :size %><br> <br>
+  
   <%= f.submit %>
 <% end %>
