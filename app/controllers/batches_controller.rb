@@ -15,6 +15,7 @@ before_action :authenticate_user!
     @batch = Batch.new(batch_params)
     @batch.current_quantity = @batch.original_quantity
     @batch.save
+    Batch.initial_batch_add_to_material(@batch)
     redirect_to material_batches_path
   end
 
