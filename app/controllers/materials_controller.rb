@@ -15,6 +15,11 @@ before_action :authenticate_user!
     redirect_to materials_path
   end
 
+  def show
+    @material = Material.find(params[:id])
+  end
+
+
 
 private
   def material_params

@@ -13,7 +13,10 @@ Rails.application.routes.draw do
 
   resources :products
 
-  resources :materials
+  resources :materials do 
+    resources :batches
+  end
+
 
 
   # Example of regular route:

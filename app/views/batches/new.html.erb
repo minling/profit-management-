@@ -1,22 +1,22 @@
 <h4> Add the batch here </h4>
-<!-- make this nested form fully by creating a join table between batches and materials -->
-  <%= f.fields_for :batches, Batch.new do |batch_field| %>
+
+<%= form_for([@material, @batch]) do |f| %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.hidden_field :material_id, :value => @material.id %>
-  <%= batch_field.label :name %>
-  <%= batch_field.text_field :name %><br>
-  <%= batch_field.label :color %>
-  <%= batch_field.text_field :color %><br>
-  <%= batch_field.label :size %>
-  <%= batch_field.text_field :size %><br>
-  <%= batch_field.label :original_quantity %>
-  <%= batch_field.text_field :original_quantity %><br>
-  <%= batch_field.label :current_quantity %>
-  <%= batch_field.text_field :current_quantity %><br>
-  <%= batch_field.label :total_cost %>
-  <%= batch_field.text_field :total_cost %><br>
-  <%= batch_field.label :purchase_date %>
-  <%= batch_field.text_field :purchase_date, 'data-provide' => 'datepicker' %><br>
-  <%= batch_field.label :cost_per_piece %>
-  <%= batch_field.text_field :cost_per_piece %><br>
-  <% end %>
+  <%= f.hidden_field :material_id, :value => params[:material_id] %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <%= f.label :color %>
+  <%= f.text_field :color %><br>
+  <%= f.label :size %>
+  <%= f.text_field :size %><br>
+  <%= f.label :quantity %>
+  <%= f.text_field :original_quantity %><br>
+  <%= f.label :total_cost %>
+  <%= f.text_field :total_cost %><br>
+  <%= f.label :purchase_date %>
+  <%= f.text_field :purchase_date, 'data-provide' => 'datepicker' %><br>
+  <%= f.label :cost_per_piece %>
+  <%= f.text_field :cost_per_piece %><br>
+  
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,12 @@
+<% @batches.each do |batch| %>
+  ID: <%= batch.material_id %> <br>
+  name: <%= batch.name %> <br>
+  color: <%= batch.color %> <br>
+  size: <%= batch.size %> <br>
+  Original Quantity: <%= batch.original_quantity %> <br>
+  Current Quantity: <%= batch.current_quantity %> <br>
+  Total Cost: <%= batch.total_cost %> <br>
+  Purchase Date: <%= batch.purchase_date %> <br>
+  Cost per piece: <%= batch.cost_per_piece %> <br>
+  
+<% end %>

@@ -1,6 +1,7 @@
 
 <%= link_to '<i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i>  Add a Material'.html_safe, new_material_path %>
 <br>
+
 <% @materials.each do |material| %>
   ID: <%= material.id %> </br>
   Name: <%= material.name %></br>
@@ -8,4 +9,6 @@
   Color: <%= material.color %></br>
   Size: <%= material.size %> </br>
   Current Batch: <%= material.current_batch %></br>
+
+  <%= link_to 'See here', material_path(material.id) %>
 <% end %>

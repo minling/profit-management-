@@ -1,0 +1,10 @@
+
+  ID: <%= @material.id %> </br>
+  Name: <%= @material.name %></br>
+  Total Quantity: <%= @material.total_quantity %></br>
+  Color: <%= @material.color %></br>
+  Size: <%= @material.size %> </br>
+  Current Batch: <%= @material.current_batch %></br>
+
+  Add a batch for this material: 
+  <%= link_to 'Add a Batch', new_material_batch_path(@material, @batch) %>  
