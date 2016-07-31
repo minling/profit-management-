@@ -8,8 +8,13 @@ before_action :authenticate_user!
 
   def new 
     @product = Product.new
-    # @materials = Material.all.by_name
+    @materials = Material.order(:name)
   end
+
+  def create
+    
+  end
+
 
 
 end

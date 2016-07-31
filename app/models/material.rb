@@ -6,4 +6,5 @@ class Material < ActiveRecord::Base
 
   accepts_nested_attributes_for :batches, allow_destroy: true
   # scope :by_name, -> { order(:name) }
+
 end
