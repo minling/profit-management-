@@ -1,0 +1,14 @@
+<%= form_for(@product) do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  Name: <%= f.text_field :name %><br>
+  Price: <%= f.text_field :price %><br><br>
+  Selecting the materials 
+    <div id="materialAdditions">
+  <%= render partial: 'materials_form', locals: {f: f}%>
+  </div>
+   <a href="javascript:;" id="addNewMaterial">Add New Material</a><br>
+   <div class="hide" id="new_materials_form">
+  <%= render partial: "materials_form", locals: {f: f} %>
+</div>
+  <%= f.submit %>
+<% end %>

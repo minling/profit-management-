@@ -1,0 +1,4 @@
+<%= f.fields_for :materials, Material.new do |tag_field| %>
+        <%= tag_field.label :name %>
+          <%= tag_field.collection_select :id, Material.order(:name),:id,:name, include_blank: true %>
+        <% end %><br>
