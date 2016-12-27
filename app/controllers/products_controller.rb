@@ -15,6 +15,11 @@ before_action :authenticate_user!
     
   end
 
+private
+
+  # def product_params
+  #   params.require(:product).permit(:user_id, :name, :price, :materials_attributes => [:id], :material_ids =>[])
+  # end
 
 
 end

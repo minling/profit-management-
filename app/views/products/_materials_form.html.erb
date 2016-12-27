@@ -1,7 +1,9 @@
 <%= f.fields_for :materials, Material.new do |tag_field| %>
+
 <%= tag_field.label :name %>
+
 <%= tag_field.select :id, Material.order(:name).map{ |m| 
   m.color == nil ? [ "#{m.name} - #{m.size}", m.id ] : [ "#{m.name} - #{m.color}", m.id ]
 }, {prompt: "-select-"} %>
 
-<% end %><br>
+<% end %>
